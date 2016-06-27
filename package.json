@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/neosavvy/website/issues"
   },
-  "homepage": "https://github.com/neosavvy/website"
+  "homepage": "https://github.com/neosavvy/website",
+  "dependencies": {
+    "httpster": "1.0.3"
+  }
 }
