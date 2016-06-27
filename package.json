@@ -1,0 +1,20 @@
+{
+  "name": "neosavvy-homepage",
+  "version": "1.0.0",
+  "description": "Neosavvy Homepage",
+  "main": "index.js",
+  "scripts": {
+    "start": "./start.sh",
+    "deploy": "ansible-playbook -u ec2-user --private-key=~/.ssh/AdamsMacbookPro2016.pem -i ansible/hosts/prod ./ansible/production.yml -vvvv"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/neosavvy/website.git"
+  },
+  "author": "Adam Parrish and Trevor Ewen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neosavvy/website/issues"
+  },
+  "homepage": "https://github.com/neosavvy/website"
+}

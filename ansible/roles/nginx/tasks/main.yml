@@ -1,0 +1,28 @@
+- name: Install basic packages
+  action: apt pkg={{ item }} state=installed update_cache=yes
+  with_items:
+    - nginx
+
+- name: Make sure the /opt/neosavvy directory exists
+  file: dest=/opt/neosavvy mode=755 state=directory owner={{ wwwUID }} group={{ wwwGID }}
+
+- name: Make sure the /opt/neosavvy/www directory exists
+  file: dest=/opt/neosavvy/www mode=755 state=directory owner={{ wwwUID }} group={{ wwwGID }}
+
+- name: Remove default installation site
+  file: dest=/etc/nginx/sites-available/default state=absent
+
+- name: Remove default installation site
+  file: dest=/etc/nginx/sites-enabled/default state=absent
+
+- name: Set up nginx default site
+  template: src=neosavvy-www dest=/opt/neosavvy/neosavvy-www owner={{ wwwUID }} group={{ wwwGID }} mode=644
+
+- name: enable the neosavvy-www site
+  file: src=/opt/neosavvy/neosavvy-www dest=/etc/nginx/sites-enabled/neosavvy-www state=link
+
+- name: restart nginx
+  service: name=nginx state=restarted
+
+- name: copy files
+  copy: src=../../../../src/ dest=/opt/neosavvy/www/
