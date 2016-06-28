@@ -3,9 +3,9 @@
 }
 
 .profile {
-    width: 300px;
-    height: 300px;
-    background-size: auto 300px;
+    width: 150px;
+    height: 150px;
+    background-size: auto 150px;
 }
 
 #adam-profile {
@@ -14,25 +14,38 @@
 }
 
 #trevor-profile {
-    background-size: auto 420px;
+    background-size: auto 250px;
     background-image: url('../headshots/trevor.jpg');
-    background-position: 53% 0%;
+    background-position: 52% 0%;
 }
 
 #pablo-profile {
     background-image: url('../headshots/pablo.jpg');
-    background-position: 70% 100%;
-    background-size: auto 315px;
+    background-position: 65% 20%;
+    background-size: auto 200px;
 }
 
 #sushi-profile {
-    background-size: auto 325px;
+    background-size: auto 200px;
     background-image: url('../headshots/sushi.jpg');
-    background-position: 62% 0%;
+    background-position: 58% 0%;
 }
 
 #matt-profile {
-    background-size: auto 380px;
+    background-size: auto 200px;
     background-image: url('../headshots/matt.jpg');
-    background-position: 55% 0%;
+    background-position: 50% 0%;
+}
+
+.hero-image-textbox {
+    background-color: rgba(0,0,0,.5);
+    border-radius: 20px;
+    padding-bottom: 20px;
+}
+
+.hero-image-textbox-small {
+    margin-top: 20px;
+    background-color: rgba(0,0,0,.5);
+    border-radius: 20px;
+    padding-top: 10px;
 }
