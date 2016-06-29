@@ -31,6 +31,14 @@ html, body {
     padding-bottom: 20px;
 }
 
+.header-image {
+    height: 40px;
+    width: auto;
+    margin: 0 auto;
+    position: relative;
+    top: 5px;
+}
+
 .hero-image-textbox-small {
     margin-top: 20px;
     background-color: rgba(0,0,0,.5);
@@ -74,8 +82,8 @@ html, body {
     position: relative;
     bottom: 6px;
     margin-right: 10px;
-    width: 32px;
     height: 32px;
+    width: auto;
 }
 
 /* hide index content to start; will be revealed when jQuery swaps loading screen out */
@@ -89,31 +97,31 @@ html, body {
 
 /* person-specific profile picture stylings */
 #adam-profile {
-    background-image: url('../images/headshots/adam.jpg');
+    background-image: url('../images/headshots-tinypng/adam.jpg');
     background-position: 60%;
 }
 
 #trevor-profile {
     background-size: auto 250px;
-    background-image: url('../images/headshots/trevor.jpg');
+    background-image: url('../images/headshots-tinypng/trevor.jpg');
     background-position: 52% 0%;
 }
 
 #pablo-profile {
-    background-image: url('../images/headshots/pablo.jpg');
+    background-image: url('../images/headshots-tinypng/pablo.jpg');
     background-position: 65% 20%;
     background-size: auto 200px;
 }
 
 #sushi-profile {
     background-size: auto 200px;
-    background-image: url('../images/headshots/sushi.jpg');
+    background-image: url('../images/headshots-tinypng/sushi.jpg');
     background-position: 58% 0%;
 }
 
 #matt-profile {
     background-size: auto 200px;
-    background-image: url('../images/headshots/matt.jpg');
+    background-image: url('../images/headshots-tinypng/matt.jpg');
     background-position: 50% 0%;
 }
 
@@ -155,6 +163,7 @@ html, body {
 /* google map sizing */
 #googlemap {
     width: 100%;
+    background-color: #ddd;
 }
 
 @media (min-width: 992px) {
