@@ -131,6 +131,22 @@ html, body {
     background-position: 50% 0%;
 }
 
+#alex-profile {
+    background-size: auto 80px;
+    background-image: url('../images/assets/logo.png');
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: 53%
+}
+
+#dana-profile {
+    background-size: auto 80px;
+    background-image: url('../images/assets/logo.png');
+    background-color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-position: 53%
+}
+
 .profile-placeholder-bg {
     padding: 27px;
     background: linear-gradient(#DEDEDC, #DBDBD9, #D5D5D3, #B0B2B1);
