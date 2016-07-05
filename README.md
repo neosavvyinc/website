@@ -12,3 +12,13 @@ Email Adam @ aparrish@neosavvy.com or Trevor tewen@neosavvy.com to let us know y
 * `npm install`
 * `npm start`
 * `open localhost:3000`
+
+### Deployment
+
+You can deploy the site using the ```npm run deploy``` task. Naturally, the server is secure, so you will need to request the .pem file from Adam or Trevor.
+
+The deploy script assumes the .pem file is in your ~/.ssh directory, so we recommend you place it there. You will likely need to change the permissions once it lands there.
+
+```
+sudo chmod 400 ~/.ssh/neosavvy_website.pem
+```

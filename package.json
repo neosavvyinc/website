@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./start.sh",
-    "deploy": "ansible-playbook -u ec2-user --private-key=~/.ssh/AdamsMacbookPro2016.pem -i ansible/hosts/prod ./ansible/production.yml -vvvv"
+    "deploy": "ansible-playbook -u ec2-user --private-key=~/.ssh/neosavvy_website.pem -i ansible/hosts/prod ./ansible/production.yml -vvvv"
   },
   "repository": {
     "type": "git",

@@ -8,8 +8,6 @@
       serverListenAddress: "0.0.0.0"
       nginxProxyToAddress: "0.0.0.0"
       nginxProxyToPort: "8090"
-      apiBackendDNSName: "api.shoutoutwith.us"
-      adminContact: "admin@shoutoutwith.us"
       wwwUID: "ubuntu"
       wwwGID: "ubuntu"
       deploymentBranch: "master"
