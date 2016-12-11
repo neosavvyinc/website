@@ -296,3 +296,11 @@ html, body {
             opacity: 0;
         }
 }
+
+.hover-to-link {
+    color: #FFFFFF;
+}
+
+.hover-to-link:hover {
+    color: #F05A1D;
+}
