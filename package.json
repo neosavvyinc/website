@@ -23,6 +23,7 @@
     "next": "^3.0.1-beta.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-ga": "^2.2.0"
+    "react-ga": "^2.2.0",
+    "react-scroll": "^1.5.3"
   }
 }

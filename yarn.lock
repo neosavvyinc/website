@@ -2630,7 +2630,7 @@ promise@^7.0.1, promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6:
+prop-types@15.5.10, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -2738,6 +2738,13 @@ react-proxy@^3.0.0-alpha.0:
   resolved "https://registry.yarnpkg.com/react-proxy/-/react-proxy-3.0.0-alpha.1.tgz#4400426bcfa80caa6724c7755695315209fa4b07"
   dependencies:
     lodash "^4.6.1"
+
+react-scroll@^1.5.3:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/react-scroll/-/react-scroll-1.5.3.tgz#6381fdd9a2f2f5ef0332f849863f651be2b8146b"
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.5.8"
 
 react@^15.6.1:
   version "15.6.1"
