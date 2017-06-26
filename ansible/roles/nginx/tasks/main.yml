@@ -25,4 +25,4 @@
   service: name=nginx state=restarted
 
 - name: copy files
-  copy: src=../../../../src/ dest=/opt/neosavvy/www/
+  copy: src=../../../../out/ dest=/opt/neosavvy/www/

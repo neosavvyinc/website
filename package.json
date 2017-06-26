@@ -6,8 +6,7 @@
   "scripts": {
     "deploy": "ansible-playbook -u ec2-user --private-key=~/.ssh/neosavvy_website.pem -i ansible/hosts/prod ./ansible/production.yml -vvvv",
     "start": "next",
-    "build": "next build",
-    "prod": "next start"
+    "prod": "next build && next export && httpster -p 3000 -d ./out"
   },
   "repository": {
     "type": "git",
@@ -25,5 +24,8 @@
     "react-dom": "^15.6.1",
     "react-ga": "^2.2.0",
     "react-scroll": "^1.5.3"
+  },
+  "devDependencies": {
+    "httpster": "^1.0.3"
   }
 }
