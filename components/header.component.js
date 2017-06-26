@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function({ transparent }) {
   return (
-    <nav className="nav" style={transparent ? styles.transparent.container : {}}>
+    <nav className="nav" style={transparent ? styles.transparent.container : styles.default.container}>
       <div className="nav-left">
         <div className="nav-item is-brand" style={styles.transparent.text}>
           <Link prefetch href="/">
@@ -52,8 +52,6 @@ export default function({ transparent }) {
        {/*
        <!-- This "nav-menu" is hidden on mobile -->
        <!-- Add the modifier "is-active" to display it on mobile -->
-       */}
-       <div className="nav-right nav-menu">
          <Link prefetch href="/services">
            <a className="nav-item" style={styles.transparent.text}>Services</a>
          </Link>
@@ -63,14 +61,21 @@ export default function({ transparent }) {
          <Link prefetch href="/careers">
            <a className="nav-item" style={styles.transparent.text}>Careers</a>
          </Link>
-         <Link prefetch href="/contact">
-           <a className="nav-item" style={styles.transparent.text}>Contact</a>
-         </Link>
+       */}
+       <div className="nav-right nav-menu">
+         <div className="nav-item">
+           <Link prefetch href="/contact">
+             <a className="button" style={styles.transparent.button}>
+               <span style={styles.transparent.text}>CONTACT</span>
+             </a>
+           </Link>
+         </div>
        </div>
      </nav>
   );
 };
 const styles = {
+  default: {},
   transparent: {
     container: {
       position: 'absolute',
@@ -79,6 +84,11 @@ const styles = {
     },
     text: {
       color: 'white'
+    },
+    button: {
+      color: 'white',
+      background: 'transparent',
+      border: '1px solid white'
     }
   },
   logo: {

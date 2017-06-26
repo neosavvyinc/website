@@ -14,15 +14,21 @@ export default function() {
       <div id="index-content-container">
         <div>
           <div style={styles.jumbo.container}>
+            <div />
             <div style={styles.jumbo.content}>
               <h1 className="title is-1" style={{...styles.jumbo.text, ...styles.jumbo.title}}>NEOSAVVY</h1>
               <p style={{...styles.jumbo.text, ...styles.jumbo.subtitle}}>
                 Delivering software development, professional training, and project delivery solutions to suit your business needs
               </p>
-              <ScrollLink to="anchor" smooth={true} offset={50} duration={500}>
-                <button className="button is-primary" style={styles.jumbo.button}>LEARN MORE</button>
-              </ScrollLink>
             </div>
+            <ScrollLink to="anchor" smooth={true} offset={50} duration={500}>
+              <div style={styles.jumbo.cta}>
+                <h3 className="title is-3" style={styles.jumbo.text}>LEARN MORE</h3>
+                <h3 className="icon is-3" style={{...styles.jumbo.text, ...styles.jumbo.iconContainer}}>
+                  <i className="fa fa-angle-down" style={styles.jumbo.icon}/>
+                </h3>
+              </div>
+            </ScrollLink>
           </div>
 
           <ScrollElement name="anchor">
@@ -179,31 +185,40 @@ const styles = {
       boxShadow: '0 5px 8px 0 rgba(72,89,102,.06)',
       backgroundRepeat: 'no-repeat',
       backgroundSize: '100%',
-      backgroundPosition: 'center'
-    },
-    content: {
+      backgroundPosition: 'center',
+
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100%',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    },
+    content: {
+      marginTop: '100px'
+    },
+    cta: {
+      marginBottom: '40px',
+      cursor: 'pointer'
+    },
+    iconContainer: {
+      textAlign: 'center',
+      width: '100%'
+    },
+    icon: {
+      fontSize: '44px',
     },
     text: {
       color: 'white'
     },
     title: {
-      fontWeight: '800'
+      fontWeight: '800',
+      marginLeft: '-100px'
     },
     subtitle: {
       fontSize: '22px',
       maxWidth: '45rem',
-      textAlign: 'center',
-      marginBottom: '1.5rem'
-    },
-    button: {
       marginBottom: '1.5rem',
-      backgroundColor: '#E2632A'
-    }
+      marginLeft: '-100px'
+    },
   },
   content: {
     marginTop: '20px'
