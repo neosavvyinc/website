@@ -51,7 +51,7 @@ export default class Main extends Component {
 
 const styles = {
   mainContent: {
-    marginBottom: '230px',
+    marginBottom: '400px',
     backgroundColor: 'white',
     boxShadow: '0 0 30px 0 rgba(54,69,79,.86)',
     //color: '#70808D',

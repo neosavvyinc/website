@@ -12,7 +12,6 @@ export default function({ transparent }) {
               alt="NS"
               style={styles.logo}
             />
-            {/*<h4 className="title is-4">Neosavvy</h4>*/}
           </Link>
         </div>
       </div>
