@@ -4,6 +4,7 @@ import Main from '../layouts/main.layout';
 import Services from '../components/services.component';
 import Team from '../components/team.component';
 import CaseStudies from '../components/case_studies.component';
+import Contact from '../components/contact.component';
 
 const {
   Link: ScrollLink,
@@ -43,6 +44,10 @@ export default function() {
 
           <ScrollElement name="team">
             <Team />
+          </ScrollElement>
+
+          <ScrollElement name="team">
+            <Contact />
           </ScrollElement>
         </div>
       </div>

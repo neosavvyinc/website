@@ -1,7 +1,7 @@
 export default function() {
   return (
-    <div style={styles.content} className="container">
-      <h1 className="title is-1">Services</h1>
+    <div className="container" style={styles.content}>
+      <h1 className="title is-1" style={{ textAlign: 'center' }}>Services</h1>
       <section className="columns" style={styles.card.container}>
         <div className="column is-4 is-offset-1" style={styles.card.image.container}>
           <img
@@ -96,7 +96,7 @@ export default function() {
 
 const styles = {
   content: {
-    marginTop: '20px'
+    marginTop: '80px'
   },
   card: {
     container: {
