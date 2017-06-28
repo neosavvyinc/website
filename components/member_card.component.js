@@ -1,52 +1,105 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Link from 'next/link';
 
-export default function({ imageURL, name, twitterHandle, description, link, children }) {
-  const styles = compStyles(imageURL);
-  const card = (
-    <div style={styles.container}>
-      <p style={styles.name}>{name}</p>
-      {/* twitterHandle ? <p>@{twitterHandle}</p> : null */}
-    </div>
-  );
+export default class MemberCard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showDetails: false
+    };
+  }
 
-  return link ? (
-    <Link href={link}>
-      <div style={{cursor: 'pointer'}}>
-        {card}
+  toggleDetails = () => {
+    if (this.props.link) return;
+    this.setState({ showDetails: !this.state.showDetails });
+  }
+
+  render() {
+    const {
+      imageURL,
+      name,
+      description,
+      bio,
+      link,
+      twitter,
+      linkedin,
+      medium
+    } = this.props;
+    const styles = compStyles(imageURL);
+    const card = (
+      <div onClick={this.toggleDetails} style={styles.container}>
+        <p style={styles.title}>{name}</p>
+        <p style={styles.subtitle}>{description}</p>
       </div>
-    </Link>
-  ) : card;
-  // return (
-  //   <div className="card" style={styles.card.container}>
-  //     <div className="card-image">
-  //       <figure className="image">
-  //         <img src={imageURL} alt="Image"/>
-  //       </figure>
-  //     </div>
-  //     <div className="card-content">
-  //       <div className="media">
-  //           {/*
-  //         <div className="media-left">
-  //           <figure className="image is-48x48">
-  //             <img src="http://bulma.io/images/placeholders/96x96.png" alt="Image"/>
-  //           </figure>
-  //         </div>
-  //           */}
-  //         <div className="media-content">
-  //           <p className="title is-4">{name}</p>
-  //           <p className="subtitle is-6">
-  //             <a href={`https://twitter.com/${twitterHandle}`}>@{twitterHandle}</a>
-  //           </p>
-  //         </div>
-  //       </div>
+    );
 
-  //       <div className="content">
-  //         {description}
-  //       </div>
-  //     </div>
-  //   </div>
-  // )
+    if (link) {
+      return (
+        <Link href={link}>
+          {card}
+        </Link>
+      )
+    } else {
+      const modal = (
+        <div className={`modal ${this.state.showDetails ? 'is-active' : ''}`}>
+          <div className="modal-background" onClick={this.toggleDetails} />
+          <div className="modal-content">
+            <div className="box" style={{ borderRadius: 0 }}>
+              <div className="media">
+                <div className="media-left">
+                  <figure className="image is-64x64">
+                    <img src={imageURL} alt="Image"/>
+                  </figure>
+                </div>
+                <div className="media-content">
+                  <div className="content">
+                    <p>
+                      <strong>{name}</strong>
+                      <small style={{paddingLeft: '5px'}}><a href={`https://twitter.com/${twitter}`}>@{twitter}</a></small>
+                      <br/>
+                      {bio}
+                    </p>
+                  </div>
+                  <nav className="level">
+                    <div className="level-left">
+                      {
+                        linkedin ? (
+                          <a className="level-item" href={`https://linkedin.com/in/${linkedin}`}>
+                            <i className="fa fa-linkedin"/>
+                          </a>
+                        ): null
+                      }
+                      {
+                        twitter ? (
+                          <a className="level-item" href={`https://twitter.com/${twitter}`}>
+                            <i className="fa fa-twitter"/>
+                          </a>
+                        ) : null
+                      }
+                      {
+                        medium ? (
+                          <a className="level-item" href={`https://medium.com/@${medium}`}>
+                            <i className="fa fa-medium"/>
+                          </a>
+                        ) : null
+                      }
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button className="modal-close" onClick={this.toggleDetails}></button>
+        </div>
+      );
+      return (
+        <div>
+          {card}
+          {modal}
+        </div>
+      );
+    }
+  }
 }
 
 function compStyles(url) {
@@ -55,12 +108,12 @@ function compStyles(url) {
       backgroundImage: `url('${url}')`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
-      height: '200px',
       width: '300px',
+      height: '242px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-end',
-      alignItems: 'center'
+      cursor: 'pointer'
     },
     name: {
       color: 'white',
@@ -68,15 +121,20 @@ function compStyles(url) {
       fontWeight: '600',
       textTransform: 'uppercase',
       marginBottom: '35px',
+    },
+    title: {
+      fontSize: '20px',
+      color: 'white',
+      fontWeight: '600',
+      marginLeft: '10px'
+    },
+    subtitle: {
+      fontSize: '14px',
+      fontWeight: '200',
+      color: 'white',
+      marginBottom: '10px',
+      marginLeft: '10px'
     }
   };
 };
 
-// const styles = {
-//   card: {
-//     container: {
-//       width: '20rem',
-//       height: '20rem'
-//     }
-//   }
-// }
