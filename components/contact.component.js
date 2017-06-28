@@ -46,6 +46,7 @@ export default () => (
               style={styles.form.textarea}
             />
             <div className="columns is-centered">
+              <div className="column is-4"/>
               <div className="column is-4">
                 <button
                   style={styles.form.button}
@@ -55,6 +56,7 @@ export default () => (
                   Contact Us
                 </button>
               </div>
+              <div className="column is-4"/>
             </div>
           </form>
         )
@@ -76,7 +78,7 @@ const styles = {
     container: {},
     text: {
       height: '45px',
-      fontSize: '22px',
+      fontSize: '18px',
       padding: '10px',
       border: '0',
       backgroundColor: '#F3F1EF'
@@ -84,7 +86,7 @@ const styles = {
     textarea: {
       width: '100%',
       height: '145px',
-      fontSize: '22px',
+      fontSize: '18px',
       padding: '10px',
       resize: 'none',
       border: '0',
@@ -95,7 +97,7 @@ const styles = {
       backgroundColor: '#E2632A',
       fontSize: '20px',
       color: 'white',
-      width: '250px',
+      width: '100%',
       height: '50px',
       borderRadius: '0'
     }

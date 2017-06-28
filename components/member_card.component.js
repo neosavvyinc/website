@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function({ imageURL, name, twitterHandle, description, link }) {
+export default function({ imageURL, name, twitterHandle, description, link, children }) {
   const styles = compStyles(imageURL);
   const card = (
     <div style={styles.container}>

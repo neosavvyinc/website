@@ -1,4 +1,5 @@
 import React from 'react';
+import Scroll from 'react-scroll';
 import Link from 'next/link';
 
 export default function({ transparent }) {
@@ -43,9 +44,11 @@ export default function({ transparent }) {
        <!-- You need JavaScript to toggle the "is-active" className on "nav-menu" -->
        */}
        <span className="nav-toggle" style={styles.transparent.text}>
+         {/*
          <span></span>
          <span></span>
          <span></span>
+         */}
        </span>
 
        {/*
@@ -62,13 +65,13 @@ export default function({ transparent }) {
          </Link>
        */}
        <div className="nav-right nav-menu">
+         {/*
          <div className="nav-item">
-           <Link prefetch href="/contact">
-             <a className="button" style={styles.transparent.button}>
-               <span style={styles.transparent.text}>CONTACT</span>
-             </a>
-           </Link>
+           <a className="button" style={styles.transparent.button}>
+             <span style={styles.transparent.text}>CONTACT</span>
+           </a>
          </div>
+         */}
        </div>
      </nav>
   );

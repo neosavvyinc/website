@@ -17,14 +17,25 @@ export default function() {
       <div id="index-content-container">
         <div>
           <div style={styles.jumbo.container}>
-            <div />
+            <div style={styles.jumbo.contact}>
+              <ScrollLink
+                className="button"
+                style={styles.jumbo.button}
+                to="contact"
+                smooth="easeInOutCubic"
+                offset={0}
+                duration={500}
+              >
+                <span style={styles.jumbo.text}>CONTACT</span>
+              </ScrollLink>
+            </div>
             <div style={styles.jumbo.content}>
               <h1 className="title is-1" style={{...styles.jumbo.text, ...styles.jumbo.title}}>NEOSAVVY</h1>
               <p style={{...styles.jumbo.text, ...styles.jumbo.subtitle}}>
                 Delivering software development, professional training, and project delivery solutions to suit your business needs
               </p>
             </div>
-            <ScrollLink to="case-studies" smooth={true} offset={0} duration={500}>
+            <ScrollLink to="case-studies" smooth="easeInOutCubic" offset={0} duration={500}>
               <div style={styles.jumbo.cta}>
                 <h3 className="title is-3" style={styles.jumbo.text}>LEARN MORE</h3>
                 <h3 className="icon is-3" style={{...styles.jumbo.text, ...styles.jumbo.iconContainer}}>
@@ -46,7 +57,7 @@ export default function() {
             <Team />
           </ScrollElement>
 
-          <ScrollElement name="team">
+          <ScrollElement name="contact">
             <Contact />
           </ScrollElement>
         </div>
@@ -97,5 +108,19 @@ const styles = {
       marginBottom: '1.5rem',
       marginLeft: '-100px'
     },
+    contact: {
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'flex-end'
+    },
+    button: {
+      color: 'white',
+      background: 'transparent',
+      border: '1px solid white',
+      cursor: 'pointer',
+      marginTop: '10px',
+      marginRight: '10px',
+      zIndex: 99
+    }
   },
 }
