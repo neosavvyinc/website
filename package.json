@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "deploy": "ansible-playbook -u ec2-user --private-key=~/.ssh/neosavvy_website.pem -i ansible/hosts/prod ./ansible/production.yml -vvvv",
+    "deploys3": "aws",
     "start": "next",
-    "prod": "next build && next export && httpster -p 3000 -d ./out"
+    "build": "next build && next export",
+    "serve": "httpster -p 3000 -d ./out"
   },
   "repository": {
     "type": "git",

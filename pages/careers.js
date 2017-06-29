@@ -4,7 +4,7 @@ import Main from '../layouts/main.layout';
 
 export default function() {
   return (
-    <Main>
+    <Main headerTransparent={false}>
       <div className="page-wrap">
         <div className="section header-section">
           <div className="container">

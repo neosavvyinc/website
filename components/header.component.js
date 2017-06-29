@@ -65,6 +65,7 @@ export default function({ transparent }) {
          </Link>
        */}
        <div className="nav-right nav-menu">
+         <div/>
          {/*
          <div className="nav-item">
            <a className="button" style={styles.transparent.button}>

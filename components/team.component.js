@@ -55,7 +55,7 @@ export default () => (
       <span style={{paddingRight: '5px', paddingLeft: '5px'}}>
         <MemberCard
           name="Dana Parrish"
-          imageURL="static/images/assets/logo.png"
+          imageURL="static/images/headshots-portrait/dana-gradient.png"
           description="HR Generalist"
           bio={bios.dana}
           twitter="neosavvy"
