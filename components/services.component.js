@@ -1,4 +1,10 @@
-export default function() {
+import _ from 'lodash';
+import sizeMe from 'react-sizeme';
+
+const Services = function({ size }) {
+  const isMobile = size.width < 768;
+  const styles = createStyles(isMobile);
+
   return (
     <div className="container" style={styles.content}>
       <h1 className="title is-1" style={{ textAlign: 'center' }}>Services</h1>
@@ -90,24 +96,37 @@ export default function() {
             and assure successful project deployment.</p>
         </div>
       </section>
-  </div>
+    </div>
   );
 }
 
-const styles = {
-  content: {
-    marginTop: '80px'
-  },
-  card: {
-    container: {
-      alignItems: 'center',
+export default sizeMe()(Services);
+
+const createStyles = (isMobile) => {
+  const defaults = {
+    content: {
+      marginTop: '80px',
     },
-    image: {
-      container: {},
-      body: {
-        maxHeight: '20rem'
+    card: {
+      container: {
+        alignItems: 'center',
+      },
+      image: {
+        container: {},
+        body: {
+          maxHeight: '20rem'
+        }
       }
     }
-  }
-}
+  };
+
+  const mobile = isMobile ? {
+    content: {
+      margin: '40px 10px 0 10px',
+      textAlign: 'center'
+    }
+  } : null;
+
+  return _.merge(defaults, mobile);
+};
 

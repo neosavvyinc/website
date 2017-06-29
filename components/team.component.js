@@ -1,4 +1,5 @@
 import MemberCard from './member_card.component';
+import sizeMe from 'react-sizeme';
 
 const bios = {
   adam: "Adam has nearly fifteen years of computer science and software development experience and founded Neosavvy in 2008. He is a graduate of North Carolina State University where he studied computer science and he has served as a developer, software engineer, and consultant for IBM, ITS, Roundarch, Motricity, Morgan Stanley, HBO, Bloomberg and many other large firms and startups. At Neosavvy he has delivered numerous projects, including various EC2- and Rackspace-support cloud services utilizing HTML5 AngularJS, and other languages. In addition to serving as lead software developer on many projects, Adam actively leads Neosavvy’s business, client, and employee interests.\nAdam lives in Brooklyn and as a North Carolina native he enjoys camping, hiking, and backpacking.",
@@ -8,65 +9,113 @@ const bios = {
   dana: "Dana has been an active member of the Neosavvy team since its founding in 2008, originally overseeing administration and payroll before transitioning to a more strategic HR role in 2016, where she is responsible for recruitment, client engagement, business administration, and process and policy implementation. Previously, she was an HR generalist for RR Donnelley, where she provided HR guidance, recruitment and cross-departmental collaboration for the Fortune 500 company. Before that, Dana was an HR generalist for the Jewish Board of Family and Children’s Services and a coordinator for CEI, a business and equipment supplier for the Research Triangle in North Carolina.\nA graduate of North Carolina State University with a bachelor’s in business management, Dana also holds a Professional in Human Resources (PHR) designation from the HR Certification Institute and a SHRM Certified Professional (SHRM-CP) designation from the Society for Human Resource Management.\nDana lives in New York and enjoys strength training, hiking and camping.",
 };
 
-export default () => (
-  <section className="container" style={{ marginTop: '80px', marginBottom: '80px' }}>
-    <h1 className="title is-1" style={{ textAlign: 'center'}}>Core Team</h1>
-    <div className="columns is-centered" style={{paddingBottom: '5px'}}>
-      <MemberCard
-        name="Adam Parrish"
-        imageURL="static/images/headshots-portrait/adam-gradient.png"
-        description="Managing Partner & Software Engineer"
-        bio={bios.adam}
-        twitter="wparrish"
-        linkedin="adamparrish"
-        medium="adamparrish"
-      />
-      <span style={{paddingRight: '5px', paddingLeft: '5px'}}>
-        <MemberCard
-          name="Trevor Ewen"
-          imageURL="static/images/headshots-portrait/trevor-gradient.png"
-          description="Partner & Software Engineer"
-          bio={bios.trevor}
-          twitter="tewen"
-          linkedin="trevorewen"
-          medium="tewen"
-        />
-      </span>
-      <MemberCard
-        name="Pablo Alonso"
-        imageURL="static/images/headshots-portrait/pablo-gradient.png"
-        description="Partner & Software Engineer"
-        bio={bios.pablo}
-        twitter="pabloalonsos"
-        linkedin="pabloalonsos"
-        medium="palonso"
-      />
-    </div>
-    <div className="columns is-centered">
-      <MemberCard
-        name="Sushindhran Harikrishnan"
-        imageURL="static/images/headshots-portrait/sushi-gradient.png"
-        description="Partner & Software Engineer"
-        bio={bios.sushi}
-        twitter="sushindhran"
-        linkedin="sushindhran"
-        medium="sushi_21846"
-      />
-      <span style={{paddingRight: '5px', paddingLeft: '5px'}}>
-        <MemberCard
-          name="Dana Parrish"
-          imageURL="static/images/headshots-portrait/dana-gradient.png"
-          description="HR Generalist"
-          bio={bios.dana}
-          twitter="neosavvy"
-          linkedin="danaparrish"
-        />
-      </span>
-      <MemberCard
-        name="CAREERS"
-        imageURL="static/images/stock-adjusted/careers.jpg"
-        link="/careers"
-      />
-    </div>
-  </section>
-)
+const Team = ({ size }) => {
+  const isMobile = size.width < 768;
+  const styles = createStyles(isMobile);
+
+  return (
+    <section className="container" style={styles.content}>
+      <h1 className="title is-1" style={styles.title}>Core Team</h1>
+      <div className="columns is-centered" style={styles.teamColumn}>
+        <span style={styles.card}>
+          <MemberCard
+            name="Adam Parrish"
+            imageURL="static/images/headshots-portrait/adam-gradient.png"
+            description="Managing Partner & Software Engineer"
+            bio={bios.adam}
+            twitter="wparrish"
+            linkedin="adamparrish"
+            medium="adamparrish"
+          />
+        </span>
+        <span style={{...styles.card, ...styles.cardCenter}}>
+          <MemberCard
+            name="Trevor Ewen"
+            imageURL="static/images/headshots-portrait/trevor-gradient.png"
+            description="Partner & Software Engineer"
+            bio={bios.trevor}
+            twitter="tewen"
+            linkedin="trevorewen"
+            medium="tewen"
+          />
+        </span>
+        <span className={styles.card}>
+          <MemberCard
+            name="Pablo Alonso"
+            imageURL="static/images/headshots-portrait/pablo-gradient.png"
+            description="Partner & Software Engineer"
+            bio={bios.pablo}
+            twitter="pabloalonsos"
+            linkedin="pabloalonsos"
+            medium="palonso"
+          />
+        </span>
+      </div>
+      <div className="columns is-centered" style={styles.teamColumn}>
+        <span style={styles.card}>
+          <MemberCard
+            name="Sushindhran Harikrishnan"
+            imageURL="static/images/headshots-portrait/sushi-gradient.png"
+            description="Partner & Software Engineer"
+            bio={bios.sushi}
+            twitter="sushindhran"
+            linkedin="sushindhran"
+            medium="sushi_21846"
+          />
+        </span>
+        <span style={{...styles.card, ...styles.cardCenter}}>
+          <MemberCard
+            name="Dana Parrish"
+            imageURL="static/images/headshots-portrait/dana-gradient.png"
+            description="HR Generalist"
+            bio={bios.dana}
+            twitter="neosavvy"
+            linkedin="danaparrish"
+          />
+        </span>
+        <span style={styles.card}>
+          <MemberCard
+            name="CAREERS"
+            imageURL="static/images/stock-adjusted/careers.jpg"
+            link="/careers"
+          />
+        </span>
+      </div>
+    </section>
+  );
+}
+
+export default sizeMe()(Team);
+
+const createStyles = (isMobile) => {
+  const defaults = {
+    content: {
+      marginTop: '80px',
+    },
+    title: {
+      textAlign: 'center'
+    },
+    teamColumn: {
+      paddingBottom: '5px'
+    },
+    card: {},
+    cardCenter: {
+      marginRight: '5px',
+      marginLeft: '5px',
+    }
+  };
+  const mobile = isMobile ? {
+    content: {
+      margin: '40px 0',
+    },
+    teamColumn: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center'
+    },
+    card: {
+      marginBottom: '5px',
+    }
+  } : null;
+  return _.merge(defaults, mobile);
+}
