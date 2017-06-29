@@ -26,7 +26,8 @@
     "react-dom": "^15.6.1",
     "react-form": "^1.2.8",
     "react-ga": "^2.2.0",
-    "react-scroll": "^1.5.3"
+    "react-scroll": "^1.5.3",
+    "react-sizeme": "^2.3.4"
   },
   "devDependencies": {
     "httpster": "^1.0.3"

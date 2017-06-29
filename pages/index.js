@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Scroll from 'react-scroll';
+import sizeMe from 'react-sizeme';
 import Main from '../layouts/main.layout';
 import Services from '../components/services.component';
 import Team from '../components/team.component';
@@ -11,7 +12,16 @@ const {
   Element: ScrollElement
 } = Scroll;
 
-export default function() {
+const index = function({ size }) {
+  const contactBtn = size.width < 768? (
+    <span style={{ ...styles.jumbo.button, border: '0', marginRight: '15px'}}>
+      <i className="fa fa-envelope-o" style={{marginTop: '15px'}} />
+    </span>
+  ) : (
+      <button className="button is-outline" style={styles.jumbo.button}>
+        <span style={styles.jumbo.text}>CONTACT</span>
+      </button>
+  );
   return (
     <Main headerTransparent={true}>
       <div id="index-content-container">
@@ -19,14 +29,13 @@ export default function() {
           <div style={styles.jumbo.container}>
             <div style={styles.jumbo.contact}>
               <ScrollLink
-                className="button"
-                style={styles.jumbo.button}
+                style={{ zIndex: 1000 }}
                 to="contact"
                 smooth="easeInOutCubic"
                 offset={0}
                 duration={500}
               >
-                <span style={styles.jumbo.text}>CONTACT</span>
+                { contactBtn }
               </ScrollLink>
             </div>
             <div style={styles.jumbo.content}>
@@ -65,6 +74,9 @@ export default function() {
     </Main>
   );
 }
+
+export default sizeMe()(index);
+
 const styles = {
   jumbo: {
     container: {
@@ -82,10 +94,9 @@ const styles = {
       alignItems: 'center'
     },
     content: {
-      marginTop: '100px'
+      margin: '0 10px'
     },
     cta: {
-      marginBottom: '40px',
       cursor: 'pointer'
     },
     iconContainer: {
@@ -100,18 +111,16 @@ const styles = {
     },
     title: {
       fontWeight: '800',
-      marginLeft: '-100px'
     },
     subtitle: {
       fontSize: '22px',
       maxWidth: '45rem',
       marginBottom: '1.5rem',
-      marginLeft: '-100px'
     },
     contact: {
       width: '100%',
       display: 'flex',
-      justifyContent: 'flex-end'
+      justifyContent: 'flex-end',
     },
     button: {
       color: 'white',
