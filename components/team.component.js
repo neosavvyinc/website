@@ -1,5 +1,6 @@
-import MemberCard from './member_card.component';
+import _ from 'lodash';
 import sizeMe from 'react-sizeme';
+import MemberCard from './member_card.component';
 
 const bios = {
   adam: "Adam has nearly fifteen years of computer science and software development experience and founded Neosavvy in 2008. He is a graduate of North Carolina State University where he studied computer science and he has served as a developer, software engineer, and consultant for IBM, ITS, Roundarch, Motricity, Morgan Stanley, HBO, Bloomberg and many other large firms and startups. At Neosavvy he has delivered numerous projects, including various EC2- and Rackspace-support cloud services utilizing HTML5 AngularJS, and other languages. In addition to serving as lead software developer on many projects, Adam actively leads Neosavvy’s business, client, and employee interests.\nAdam lives in Brooklyn and as a North Carolina native he enjoys camping, hiking, and backpacking.",
