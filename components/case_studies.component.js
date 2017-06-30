@@ -36,7 +36,7 @@ const companies = [
 
 const CaseStudies = ({ size }) => {
   const isMobile = size.width < 768;
-  const isTablet = size.width < 1220;
+  const isTablet = size.width < 1430;
   const styles = createStyles(isMobile, isTablet);
 
   return (
@@ -83,10 +83,10 @@ const createStyles = (isMobile, isTablet) => {
   const defaults = {
     container: {
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      width: '100%'
     },
     quoteContainer: {
-      maxWidth: '80vh'
     },
     quoteContent: {
       height: '100%',
@@ -95,7 +95,7 @@ const createStyles = (isMobile, isTablet) => {
       justifyContent: 'center'
     },
     card: {
-      width: '300px'
+      width: '200px'
     },
     cardContent: {
       height: '100%',
@@ -110,6 +110,9 @@ const createStyles = (isMobile, isTablet) => {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+    },
+    cases: {
+      display: 'flex',
     }
   };
 
@@ -124,13 +127,32 @@ const createStyles = (isMobile, isTablet) => {
     },
     cases: {
       display: 'flex',
-      flexDirection: 'row'
+      flexDirection: 'row',
+      justifyContent: 'center',
+      width: '100%'
     },
     card: {
-      //width: '100%'
     }
   } : {};
-  const mobile = isMobile ? {} : {};
+  const mobile = isMobile ? {
+    container: {
+      display: 'block',
+      width: '100%'
+    },
+    quoteContainer: {
+      width: '100%',
+      maxWidth: 'auto'
+    },
+    cases: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      width: '100%',
+      flexWrap: 'wrap'
+    },
+    card: {
+    }
+  } : {};
 
   return _.merge(defaults, tablet, mobile);
 }
