@@ -117,6 +117,6 @@ const createStyles = (isMobile) => {
     card: {
       marginBottom: '5px',
     }
-  } : null;
+  } : {};
   return _.merge(defaults, mobile);
 }
