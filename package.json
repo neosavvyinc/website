@@ -8,7 +8,7 @@
     "deploys3": "aws",
     "start": "next",
     "build": "next build && next export",
-    "serve": "httpster -p 3000 -d ./out"
+    "serve": "httpster -p 4000 -d ./out"
   },
   "repository": {
     "type": "git",
