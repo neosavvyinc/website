@@ -51,7 +51,7 @@ const Footer = ({ size }) => {
             <div className="column is-4">
               <Link prefetch href="/">
                 <img
-                  src="static/images/assets/logo-white.png"
+                  src="/static/images/assets/logo-white.png"
                   alt="NS"
                   style={styles.logo}
                   width={84}

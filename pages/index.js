@@ -81,7 +81,7 @@ const styles = {
   jumbo: {
     container: {
       //backgroundColor: '#F7F9FA',
-      backgroundImage: `url('static/images/stockphotos-tinypng/hero-image.jpeg')`,
+      backgroundImage: `url('/static/images/stockphotos-tinypng/hero-image.jpeg')`,
       height: '100vh',
       boxShadow: '0 5px 8px 0 rgba(72,89,102,.06)',
       backgroundRepeat: 'no-repeat',

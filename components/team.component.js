@@ -21,7 +21,7 @@ const Team = ({ size }) => {
         <span style={styles.card}>
           <MemberCard
             name="Adam Parrish"
-            imageURL="static/images/headshots-portrait/adam-gradient.png"
+            imageURL="/static/images/headshots-portrait/adam-gradient.png"
             description="Managing Partner & Software Engineer"
             bio={bios.adam}
             twitter="wparrish"
@@ -32,7 +32,7 @@ const Team = ({ size }) => {
         <span style={{...styles.card, ...styles.cardCenter}}>
           <MemberCard
             name="Trevor Ewen"
-            imageURL="static/images/headshots-portrait/trevor-gradient.png"
+            imageURL="/static/images/headshots-portrait/trevor-gradient.png"
             description="Partner & Software Engineer"
             bio={bios.trevor}
             twitter="tewen"
@@ -43,7 +43,7 @@ const Team = ({ size }) => {
         <span className={styles.card}>
           <MemberCard
             name="Pablo Alonso"
-            imageURL="static/images/headshots-portrait/pablo-gradient.png"
+            imageURL="/static/images/headshots-portrait/pablo-gradient.png"
             description="Partner & Software Engineer"
             bio={bios.pablo}
             twitter="pabloalonsos"
@@ -56,7 +56,7 @@ const Team = ({ size }) => {
         <span style={styles.card}>
           <MemberCard
             name="Sushindhran Harikrishnan"
-            imageURL="static/images/headshots-portrait/sushi-gradient.png"
+            imageURL="/static/images/headshots-portrait/sushi-gradient.png"
             description="Partner & Software Engineer"
             bio={bios.sushi}
             twitter="sushindhran"
@@ -67,7 +67,7 @@ const Team = ({ size }) => {
         <span style={{...styles.card, ...styles.cardCenter}}>
           <MemberCard
             name="Dana Parrish"
-            imageURL="static/images/headshots-portrait/dana-gradient.png"
+            imageURL="/static/images/headshots-portrait/dana-gradient.png"
             description="HR Generalist"
             bio={bios.dana}
             twitter="neosavvy"
@@ -77,7 +77,7 @@ const Team = ({ size }) => {
         <span style={styles.card}>
           <MemberCard
             name="CAREERS"
-            imageURL="static/images/stock-adjusted/careers.jpg"
+            imageURL="/static/images/stock-adjusted/careers.jpg"
             link="/careers"
           />
         </span>

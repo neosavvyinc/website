@@ -11,7 +11,7 @@ const Services = function({ size }) {
       <section className="columns" style={styles.card.container}>
         <div className="column is-4 is-offset-1" style={styles.card.image.container}>
           <img
-            src="static/images/stockphotos-tinypng/consulting-1.jpeg"
+            src="/static/images/stockphotos-tinypng/consulting-1.jpeg"
             className="img-responsive"
             style={styles.card.image.body}
           />
@@ -28,7 +28,7 @@ const Services = function({ size }) {
       <section className="columns" style={styles.card.container}>
         <div className="column is-4 is-offset-1" style={styles.card.image.container}>
           <img
-            src="static/images/stockphotos-tinypng/project-management-1.jpg"
+            src="/static/images/stockphotos-tinypng/project-management-1.jpg"
             className="img-responsive"
             style={styles.card.image.body}
           />
@@ -47,7 +47,7 @@ const Services = function({ size }) {
       <section className="columns" style={styles.card.container}>
         <div className="column is-4 is-offset-1" style={styles.card.image.container}>
           <img
-            src="static/images/stockphotos-tinypng/training-2.jpg"
+            src="/static/images/stockphotos-tinypng/training-2.jpg"
             className="img-responsive"
             style={styles.card.image.body}
           />
@@ -66,7 +66,7 @@ const Services = function({ size }) {
       <section className="columns" style={styles.card.container}>
         <div className="column is-4 is-offset-1" style={styles.card.image.container}>
           <img
-            src="static/images/stockphotos-tinypng/training-1.png"
+            src="/static/images/stockphotos-tinypng/training-1.png"
             className="img-responsive"
             style={styles.card.image.body}
           />
@@ -83,7 +83,7 @@ const Services = function({ size }) {
       <section className="columns" style={styles.card.container}>
         <div className="column is-4 is-offset-1" style={styles.card.image.container}>
           <img
-            src="static/images/stockphotos-tinypng/project-management-1.jpg"
+            src="/static/images/stockphotos-tinypng/project-management-1.jpg"
             className="img-responsive"
             style={styles.card.image.body}
           />

@@ -13,7 +13,7 @@ export default function({ transparent }) {
         <div className="nav-item is-brand" style={styles.text}>
           <Link prefetch href="/">
             <img
-              src={`static/images/assets/logo-${transparent ? 'white' : 'orange'}.png`}
+              src={`/static/images/assets/logo-${transparent ? 'white' : 'orange'}.png`}
               alt="NS"
               style={styles.logo}
             />
