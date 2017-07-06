@@ -4,7 +4,8 @@
   "description": "Neosavvy Homepage",
   "main": "index.js",
   "scripts": {
-    "deploy": "aws s3 sync ./out/ s3://neosavvy-website",
+    "deploy": "yarn build && yarn deploy-s3",
+    "deploy-s3": "aws s3 sync ./out/ s3://neosavvy-website",
     "start": "next",
     "build": "next build && next export",
     "serve": "httpster -p 4000 -d ./out"
