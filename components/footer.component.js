@@ -10,7 +10,7 @@ const Footer = ({ size }) => {
     <footer className="footer" style={styles.footer}>
       <div className="columns">
         <div className="column is-half">
-          <iframe id="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6297769246025!2d-73.98654188404852!3d40.74817127932809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ca6ada41%3A0xdc1a43cb9846b80a!2s349+5th+Ave%2C+New+York%2C+NY+10016!5e0!3m2!1sen!2sus!4v1462211604338" frameborder="0" style={styles.map} allowfullscreen="" />
+          {/*<iframe id="googlemap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6297769246025!2d-73.98654188404852!3d40.74817127932809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9ca6ada41%3A0xdc1a43cb9846b80a!2s349+5th+Ave%2C+New+York%2C+NY+10016!5e0!3m2!1sen!2sus!4v1462211604338" frameborder="0" style={styles.map} allowfullscreen="" />*/}
         </div>
         <div className="column is-3" style={styles.alignCenter}>
           <div style={styles.socialContainer}>

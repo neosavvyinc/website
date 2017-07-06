@@ -31,7 +31,7 @@ export default class Main extends Component {
 
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" type="text/css"/>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css"/>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css"/>
           <link rel="shortcut icon" href="static/images/assets/favicon.ico" type="image/x-icon"/>
           <link rel="icon" href="static/images/assets/favicon.ico" type="image/x-icon"/>
         </Head>
