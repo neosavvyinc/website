@@ -8,25 +8,25 @@ const positions = [
     role: 'Lead Software Engineer',
     link: '/lead_engineer',
     field: 'Engineering',
-    location: 'New York'
+    location: 'New York, NY'
   },
   {
     role: 'Software Engineer',
     link: '/engineer',
     field: 'Engineering',
-    location: 'New York'
+    location: 'New York, NY'
   },
   {
     role: 'Lead User Experience Practitioner',
     link: '/ux_lead',
     field: 'UX',
-    location: 'New York'
+    location: 'New York, NY'
   },
   {
     role: 'User Experience Practitioner',
     link: '/ux',
     field: 'UX',
-    location: 'New York'
+    location: 'New York, NY'
   },
 ];
 
@@ -54,7 +54,7 @@ export default function() {
             <div className="notification">
               <h4 className="title is-4">Benefits</h4>
               <ul>
-                <li>Competitve salary</li>
+                <li>Competitive salary</li>
                 <li>Company reimbursed lunches</li>
                 <li>Health and Dental insurance</li>
                 <li>Short and long term disability insurance</li>
