@@ -4,8 +4,7 @@
   "description": "Neosavvy Homepage",
   "main": "index.js",
   "scripts": {
-    "deploy": "ansible-playbook -u ec2-user --private-key=~/.ssh/neosavvy_website.pem -i ansible/hosts/prod ./ansible/production.yml -vvvv",
-    "deploys3": "aws",
+    "deploy": "aws s3 sync ./out/ s3://neosavvy-website",
     "start": "next",
     "build": "next build && next export",
     "serve": "httpster -p 4000 -d ./out"
