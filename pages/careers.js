@@ -17,7 +17,7 @@ const positions = [
     location: 'New York'
   },
   {
-    role: 'Lead User Experience',
+    role: 'Lead User Experience Practitioner',
     link: '/ux_lead',
     field: 'UX',
     location: 'New York'
@@ -37,18 +37,18 @@ export default function() {
       <div className="container">
         <div className="columns">
           <div className="column is-two-thirds">
-        <h1 className="title is-1">Working at Neosavvy</h1>
+            <h1 className="title is-1">Working at Neosavvy</h1>
             <div className="content">
-            <p>We’re proud of the work we do at Neosavvy. It’s dynamic, engaging
-              and challenges us to learn, do, and share more. We provide software
-              solutions that fit our clients’ practical and aesthetic needs. We
-              offer training, consulting, project planning, delivery, and management
-              services.</p>
-            <p>We consider ourselves active members of the engineering community.
-              In a collaborative spirit, we strive to share with others what we
-              learn from our work. This is also why we have high standards (and
-              great benefits) for our Neosavvy employees.</p>
-          </div>
+              <p>We’re proud of the work we do at Neosavvy. It’s dynamic, engaging
+                and challenges us to learn, do, and share more. We provide software
+                solutions that fit our clients’ practical and aesthetic needs. We
+                offer training, consulting, project planning, delivery, and management
+                services.</p>
+              <p>We consider ourselves active members of the engineering community.
+                In a collaborative spirit, we strive to share with others what we
+                learn from our work. This is also why we have high standards (and
+                great benefits) for our Neosavvy employees.</p>
+            </div>
           </div>
           <div className="column">
             <div className="notification">
@@ -90,11 +90,6 @@ export default function() {
           </table>
         </div>
         <div className="container is-fluid">
-          <p>
-            We are always accepting applications, please reach out to Dana at this email address
-            dana@neosavvy.com with the Job Title you are applying for.
-          </p>
-          <p>Let’s work together.</p>
           <p>No Recruiters Please.</p>
         </div>
       </div>
