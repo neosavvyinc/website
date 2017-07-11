@@ -41,23 +41,26 @@ const CaseStudies = ({ size }) => {
 
   return (
     <div style={styles.container}>
-      <div className="card" style={styles.quoteContainer}>
-        <div className="card-content" style={styles.quoteContent}>
+      <div className="primary-card"
+           style={styles.quoteContainer}>
+        <div className="card-content"
+             style={styles.quoteContent}>
           <p className="title is-4">
             Only two things are infinite, the universe and human stupidity, and I'm not sure about the former.
           </p>
           <p className="subtitle">- Albert Einstein</p>
         </div>
       </div>
-      <span style={styles.cases}>
-        {
-          _.map(companies, company => (
+      {
+        _.chain(companies).chunk(3).map(companySegment => (
+          <div style={styles.cardSegment}>{_.map(companySegment, company => (
             <div
               key={company.name}
               className="card"
               style={styles.card}
             >
-              <div className="card-content" style={styles.cardContent}>
+              <div className="card-content"
+                   style={styles.cardContent}>
                 <p/>
                 <p className="title">
                   <img
@@ -70,12 +73,12 @@ const CaseStudies = ({ size }) => {
                 </p>
               </div>
             </div>
-          ))
-        }
-      </span>
+          ))}</div>
+        )).value()
+      }
     </div>
   );
-}
+};
 
 export default sizeMe()(CaseStudies);
 
@@ -86,16 +89,22 @@ const createStyles = (isMobile, isTablet) => {
       justifyContent: 'center',
       width: '100%'
     },
-    quoteContainer: {
-    },
+    quoteContainer: {},
     quoteContent: {
       height: '100%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center'
     },
+    cardSegment: {
+      display: 'flex'
+    },
+    primaryCard: {
+      width: '100%',
+    },
     card: {
-      width: '200px'
+      width: '100%',
+      minWidth: '200px'
     },
     cardContent: {
       height: '100%',
@@ -130,10 +139,9 @@ const createStyles = (isMobile, isTablet) => {
       flexDirection: 'row',
       justifyContent: 'center',
       width: '100%'
-    },
-    card: {
     }
   } : {};
+
   const mobile = isMobile ? {
     container: {
       display: 'block',
@@ -149,10 +157,8 @@ const createStyles = (isMobile, isTablet) => {
       justifyContent: 'center',
       width: '100%',
       flexWrap: 'wrap'
-    },
-    card: {
     }
   } : {};
 
   return _.merge(defaults, tablet, mobile);
-}
+};

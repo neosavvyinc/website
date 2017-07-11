@@ -25,6 +25,7 @@ const index = function({ size }) {
   return (
     <Main headerTransparent={true}>
       <div id="index-content-container">
+        <style dangerouslySetInnerHTML={{__html: '.contact .ReactForm { width: 100%; max-width: 672px; } .contact .ReactForm input { width: 100%; } '}} />
         <div>
           <div style={styles.jumbo.container}>
             <div style={styles.jumbo.contact}>
@@ -66,7 +67,7 @@ const index = function({ size }) {
             <Team />
           </ScrollElement>
 
-          <ScrollElement name="contact">
+          <ScrollElement name="contact" className="contact">
             <Contact />
           </ScrollElement>
         </div>

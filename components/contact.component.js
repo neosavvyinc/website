@@ -78,7 +78,7 @@ const createStyles = (isMobile) => {
   const defaults = {
     container: {
       marginTop: '80px',
-      paddingBottom: '80px',
+      padding: '0 80px 80px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -118,7 +118,7 @@ const createStyles = (isMobile) => {
       width: '100%',
       margin: '0 10px'
     }
-
   } : null;
+
   return _.merge(defaults, mobile);
 }

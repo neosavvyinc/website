@@ -64,21 +64,21 @@ export default class MemberCard extends Component {
                     <div className="level-left">
                       {
                         linkedin ? (
-                          <a className="level-item" href={`https://linkedin.com/in/${linkedin}`}>
+                          <a className="level-item" style={styles.levelItem} href={`https://linkedin.com/in/${linkedin}`}>
                             <i className="fa fa-linkedin"/>
                           </a>
                         ): null
                       }
                       {
                         twitter ? (
-                          <a className="level-item" href={`https://twitter.com/${twitter}`}>
+                          <a className="level-item" style={styles.levelItem} href={`https://twitter.com/${twitter}`}>
                             <i className="fa fa-twitter"/>
                           </a>
                         ) : null
                       }
                       {
                         medium ? (
-                          <a className="level-item" href={`https://medium.com/@${medium}`}>
+                          <a className="level-item" style={styles.levelItem} href={`https://medium.com/@${medium}`}>
                             <i className="fa fa-medium"/>
                           </a>
                         ) : null
@@ -134,6 +134,9 @@ function compStyles(url) {
       color: 'white',
       marginBottom: '10px',
       marginLeft: '10px'
+    },
+    levelItem: {
+      float: 'left'
     }
   };
 };
