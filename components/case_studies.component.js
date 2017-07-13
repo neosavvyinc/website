@@ -39,6 +39,13 @@ const CaseStudies = ({ size }) => {
   const isTablet = size.width < 1430;
   const styles = createStyles(isMobile, isTablet);
 
+  let chunksize = 6;
+  if (isMobile) {
+    chunksize = 1;
+  } else if (isTablet) {
+    chunksize = 3;
+  }
+
   return (
     <div style={styles.container}>
       <div className="primary-card"
@@ -52,7 +59,7 @@ const CaseStudies = ({ size }) => {
         </div>
       </div>
       {
-        _.chain(companies).chunk(3).map(companySegment => (
+        _.chain(companies).chunk(chunksize).map(companySegment => (
           <div style={styles.cardSegment}>{_.map(companySegment, company => (
             <div
               key={company.name}
