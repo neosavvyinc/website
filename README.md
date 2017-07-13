@@ -9,8 +9,8 @@ Email Adam @ aparrish@neosavvy.com or Trevor tewen@neosavvy.com to let us know y
 
 ### Running
 
-* `npm install`
-* `npm start`
+* `yarn install`
+* `yarn start`
 * `open localhost:3000`
 
 ### Deployment

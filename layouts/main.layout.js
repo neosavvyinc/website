@@ -28,7 +28,9 @@ export default class Main extends Component {
           <meta property="og:title" content="Neosavvy: your development solution."/>
           <meta property="og:description" content="delivering software development, professional training, and project delivery solutions to suit your business needs"/>
           <meta property="og:image" content="http://www.neosavvy.com/images/assets/logo_200x200.png"/>
-
+          { /* Start of HubSpot Embed Code */ }
+          <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3430597.js" />
+          { /* End of HubSpot Embed Code */ }
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" type="text/css"/>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.3/css/bulma.css"/>
