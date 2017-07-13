@@ -35,29 +35,22 @@ const companies = [
 ];
 
 const CaseStudies = ({ size }) => {
+  const isMobileSmall = size.width < 480;
   const isMobile = size.width < 768;
   const isTablet = size.width < 1430;
   const styles = createStyles(isMobile, isTablet);
 
   let chunksize = 6;
-  if (isMobile) {
+  if (isMobileSmall) {
     chunksize = 1;
+  } else if (isMobile) {
+    chunksize = 2;
   } else if (isTablet) {
     chunksize = 3;
   }
 
   return (
     <div style={styles.container}>
-      <div className="primary-card"
-           style={styles.quoteContainer}>
-        <div className="card-content"
-             style={styles.quoteContent}>
-          <p className="title is-4">
-            Only two things are infinite, the universe and human stupidity, and I'm not sure about the former.
-          </p>
-          <p className="subtitle">- Albert Einstein</p>
-        </div>
-      </div>
       {
         _.chain(companies).chunk(chunksize).map(companySegment => (
           <div style={styles.cardSegment}>{_.map(companySegment, company => (
@@ -69,7 +62,7 @@ const CaseStudies = ({ size }) => {
               <div className="card-content"
                    style={styles.cardContent}>
                 <p/>
-                <p className="title">
+                <p className="title" style={{ textAlign: 'center' }}>
                   <img
                     src={company.logo}
                     alt={company.name}
