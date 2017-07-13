@@ -1,3 +1,4 @@
+import React, { Component } from 'react';
 import _ from 'lodash';
 import sizeMe from 'react-sizeme';
 import {
@@ -12,40 +13,53 @@ import {
   FormError
 } from 'react-form';
 
-const Contact = ({ size }) => {
-  const isMobile = size.width < 768;
-  const styles = createStyles(isMobile);
 
-  return (
-    <div style={styles.container}>
-      <h2 className="title is-2" style={{ textAlign: 'center' }}>
-        Want to know more?
-      </h2>
-      <Form
-        onSubmit={console.log}
-        validate={({ firstName, lastName, email, message }) => {
-          return {
-            firstName: !firstName ? 'Your first name is required' : undefined,
-            lastName: !lastName ? 'Your last name is required' : undefined,
-            email: !email ? 'An email is required' : undefined,
-            message: !message ? 'Please provide a message' : undefined
-          }
-        }}
-      >
-        {({submitForm}) => {
-          return (
-            <form onSubmit={submitForm} style={styles.form.container}>
-              <div className="columns" style={styles.form.textRow}>
-                <div className="column is-4">
-                  <Text field="email" type="email" placeholder="Your email" style={styles.form.text}/>
-                </div>
-                <div className="column is-4">
-                  <Text field="firstName" placeholder="Your first name" style={styles.form.text}/>
-                </div>
-                <div className="column is-4">
-                  <Text field="lastName" placeholder="Your last name" style={styles.form.text}/>
-                </div>
+export class Contact extends Component {
+  sendMail = (values) => {
+    const { firstName, lastName, message } = values;
+    const link = "mailto:dana@neosavvy.com"
+      + "?cc=contact@neosavvy.com"
+      + "&subject=" + escape(`${firstName} ${lastName} - Contact`)
+      + "&body=" + escape(message);
+
+    window.location.href = link;
+
+  }
+  render() {
+    const { size } = this.props;
+    const isMobile = size.width < 768;
+    const styles = createStyles(isMobile);
+
+    return (
+      <div style={styles.container}>
+        <h2 className="title is-2" style={{ textAlign: 'center' }}>
+          Want to know more?
+        </h2>
+        <Form
+          onSubmit={this.sendMail}
+          validate={({ firstName, lastName, email, message }) => {
+            return {
+              firstName: !firstName ? 'Your first name is required' : undefined,
+              lastName: !lastName ? 'Your last name is required' : undefined,
+              email: !email ? 'An email is required' : undefined,
+              message: !message ? 'Please provide a message' : undefined
+            }
+          }}
+        >
+          {({submitForm}) => {
+            return (
+              <form onSubmit={submitForm} style={styles.form.container}>
+                <div className="columns" style={styles.form.textRow}>
+                  <div className="column is-4">
+                    <Text field="email" type="email" placeholder="Your email" style={styles.form.text}/>
+                  </div>
+                  <div className="column is-4">
+                    <Text field="firstName" placeholder="Your first name" style={styles.form.text}/>
+                  </div>
+                  <div className="column is-4">
+                    <Text field="lastName" placeholder="Your last name" style={styles.form.text}/>
               </div>
+            </div>
               <Textarea
                 field="message"
                 placeholder="How can we help? Please add your phone number too if you wish us to call you."
@@ -64,12 +78,13 @@ const Contact = ({ size }) => {
                 </div>
                 <div className="column is-4"/>
               </div>
-            </form>
-          )
-        }}
-      </Form>
-    </div>
-  );
+              </form>
+            )
+          }}
+        </Form>
+      </div>
+    );
+  }
 }
 
 export default sizeMe()(Contact);
