@@ -34,16 +34,17 @@ export default function() {
   return (
     <Main headerTransparent={false}>
       <div style={styles.navPadding} />
-      <div className="container">
+      <div className="section container">
+        <h1 className="title is-1">Working at Neosavvy</h1>
         <div className="columns">
-          <div className="column is-two-thirds">
-            <h1 className="title is-1">Working at Neosavvy</h1>
-            <div className="content">
+          <div className="column is-two-thirds" style={styles.text}>
+            <div className="content is-medium">
               <p>We’re proud of the work we do at Neosavvy. It’s dynamic, engaging
                 and challenges us to learn, do, and share more. We provide software
                 solutions that fit our clients’ practical and aesthetic needs. We
                 offer training, consulting, project planning, delivery, and management
                 services.</p>
+              <br/>
               <p>We consider ourselves active members of the engineering community.
                 In a collaborative spirit, we strive to share with others what we
                 learn from our work. This is also why we have high standards (and
@@ -101,6 +102,9 @@ export default function() {
 const styles = {
   navPadding: {
     paddingTop: '80px'
+  },
+  text: {
+    alignSelf: 'center'
   },
   footerPadding: {
     paddingBottom: '80px'

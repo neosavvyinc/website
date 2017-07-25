@@ -14,7 +14,7 @@ export default class Engineer extends Component {
   render() {
     return (
       <Main>
-        <div className="container">
+        <div className="section container">
           <div style={styles.navPadding} />
           <div style={styles.content}>
             <h2 className="title is-2">
