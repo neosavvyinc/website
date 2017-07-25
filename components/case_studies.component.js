@@ -29,7 +29,7 @@ const companies = [
   },
   {
     name: 'Bionic Labs',
-    logo: '/static/images/case-studies/bionic-Labs.png',
+    logo: '/static/images/case-studies/bionic-labs.png',
     url: 'google.com'
   },
 ];
