@@ -8,7 +8,7 @@
 
 If you haven't configure your aws client yet make sure you do before trying to deploy.
 
-To do so, install `awscli` from npm with `npm install -g awscli`
+To do so, install the AWS command line following this: http://docs.aws.amazon.com/cli/latest/userguide/installing.html
 
 Configure your credentials through the command `aws configure`. Get/Generate your Access Key ID and your Secret Access Key from the AWS IAM service.
 
