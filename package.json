@@ -4,20 +4,37 @@
   "description": "Neosavvy Homepage",
   "main": "index.js",
   "scripts": {
-    "start": "./start.sh",
-    "deploy": "ansible-playbook -u ec2-user --private-key=~/.ssh/neosavvy_website.pem -i ansible/hosts/prod ./ansible/production.yml -vvvv"
+    "deploy": "yarn build && yarn deploy-s3",
+    "deploy-staging": "yarn build && yarn deploy-s3-staging",
+    "deploy-s3": "aws s3 sync ./out/ s3://www.neosavvy.com",
+    "deploy-s3-staging": "aws s3 sync ./out/ s3://staging.neosavvy.com",
+    "start": "next",
+    "build": "next build && next export",
+    "serve": "httpster -p 4000 -d ./out"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/neosavvy/website.git"
   },
-  "author": "Adam Parrish and Trevor Ewen",
+  "author": "Adam Parrish, Trevor Ewen and Pablo Alonso",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/neosavvy/website/issues"
   },
   "homepage": "https://github.com/neosavvy/website",
   "dependencies": {
-    "httpster": "1.0.3"
+    "next": "^3.0.1-beta.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-form": "^1.2.8",
+    "react-ga": "^2.2.0",
+    "react-scroll": "^1.5.3",
+    "react-sizeme": "^2.3.4"
+  },
+  "devDependencies": {
+    "httpster": "^1.0.3"
+  },
+  "engines": {
+    "node": "^8.0.0"
   }
 }
