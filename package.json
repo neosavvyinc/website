@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "deploy": "yarn build && yarn deploy-s3",
+    "deploy-staging": "yarn build && yarn deploy-s3-staging",
     "deploy-s3": "aws s3 sync ./out/ s3://www.neosavvy.com",
+    "deploy-s3-staging": "aws s3 sync ./out/ s3://staging.neosavvy.com",
     "start": "next",
     "build": "next build && next export",
     "serve": "httpster -p 4000 -d ./out"
