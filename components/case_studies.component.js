@@ -23,11 +23,6 @@ const companies = [
     url: 'google.com'
   },
   {
-    name: 'Lockheed Martin',
-    logo: '/static/images/case-studies/lockheed-martin.png',
-    url: 'google.com'
-  },
-  {
     name: 'Bionic Labs',
     logo: '/static/images/case-studies/bionic-labs.png',
     url: 'google.com'
