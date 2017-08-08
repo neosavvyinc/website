@@ -4,27 +4,18 @@ import sizeMe from 'react-sizeme';
 import {
   Form,
   Text,
-  Select,
-  Textarea,
-  Checkbox,
-  Radio,
-  RadioGroup,
-  NestedForm,
-  FormError
+  Textarea
 } from 'react-form';
 
 
 export class Contact extends Component {
-  sendMail = (values) => {
-    const { firstName, lastName, message } = values;
-    const link = "mailto:dana@neosavvy.com"
-      + "?cc=contact@neosavvy.com"
-      + "&subject=" + escape(`${firstName} ${lastName} - Contact`)
-      + "&body=" + escape(message);
-
-    window.location.href = link;
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      submitted: false
+    };
   }
+
   render() {
     const { size } = this.props;
     const isMobile = size.width < 768;
@@ -32,11 +23,16 @@ export class Contact extends Component {
 
     return (
       <div style={styles.container}>
-        <h2 className="title is-2" style={{ textAlign: 'center' }}>
-          Want to know more?
-        </h2>
+        {!this.state.submitted ?
+            <h2 className="title is-2" style={{ textAlign: 'center' }}>Want to know more?</h2> : null
+        }
         <Form
-          onSubmit={this.sendMail}
+          onSubmit={() => {
+            this.setState({
+                submitted: true
+            });
+          }}
+
           validate={({ firstName, lastName, email, message }) => {
             return {
               firstName: !firstName ? 'Your first name is required' : undefined,
@@ -47,7 +43,8 @@ export class Contact extends Component {
           }}
         >
           {({submitForm}) => {
-            return (
+            return !this.state.submitted ?
+            (
               <form onSubmit={submitForm} style={styles.form.container}>
                 <div className="columns" style={styles.form.textRow}>
                   <div className="column is-4">
@@ -79,7 +76,10 @@ export class Contact extends Component {
                 <div className="column is-4"/>
               </div>
               </form>
-            )
+            ) : (
+              <div style={{ fontWeight: 'bold' }}>
+                Thank you for reaching out to us. You will hear from us soon!
+              </div>)
           }}
         </Form>
       </div>
