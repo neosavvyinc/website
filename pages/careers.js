@@ -32,7 +32,7 @@ const positions = [
 
 export default function() {
   return (
-    <Main headerTransparent={false}>
+    <Main headerTransparent={false} show>
       <div style={styles.navPadding} />
       <div className="section container">
         <h1 className="title is-1">Working at Neosavvy</h1>

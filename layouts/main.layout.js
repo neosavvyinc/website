@@ -11,10 +11,13 @@ export default class Main extends Component {
       window.GA_INITIALIZED = true;
     }
     analytics.logPageView();
+
+    // NOTE - Not in love with this fix, but ensures that mobile loads correctly
+    scroll(0,0);
   }
 
   render() {
-    const { children, headerTransparent } = this.props;
+    const { children, headerTransparent, hideLogoInHeader } = this.props;
     return (
       <div>
         <Head>
@@ -38,7 +41,7 @@ export default class Main extends Component {
           <link rel="icon" href="static/images/assets/favicon.ico" type="image/x-icon"/>
         </Head>
 
-        <Header transparent={headerTransparent}/>
+        <Header transparent={headerTransparent} hideLogo={hideLogoInHeader}/>
 
         <div style={styles.mainContent}>
           {children}

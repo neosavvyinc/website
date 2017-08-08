@@ -5,4 +5,4 @@ exports.exportPathMap = () => ({
   "/lead_engineer": { page: "/lead_engineer" },
   "/ux": { page: "/ux" },
   "/ux_lead": { page: "/ux_lead" }
-})
+});
