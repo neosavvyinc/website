@@ -1,25 +1,27 @@
 import React from 'react';
-import Scroll from 'react-scroll';
 import Link from 'next/link';
 
 const orange = '#E2632A';
 const white = 'white';
 
-export default function({ transparent }) {
+export default function({ transparent, hideLogo }) {
   const styles = createStyles(transparent);
   return (
     <nav className="nav" style={styles.container}>
-      <div className="nav-left">
-        <div className="nav-item is-brand" style={styles.text}>
-          <Link prefetch href="/">
-            <img
-              src={`/static/images/assets/logo-${transparent ? 'white' : 'orange'}.png`}
-              alt="NS"
-              style={styles.logo}
-            />
-          </Link>
-        </div>
-      </div>
+      {
+        !hideLogo ?
+          <div className="nav-left">
+            <div className="nav-item is-brand" style={styles.text}>
+              <Link prefetch href="/">
+                <img
+                  src={`/static/images/assets/logo-${transparent ? 'white' : 'orange'}.png`}
+                  alt="NS"
+                  style={styles.logo}
+                />
+              </Link>
+            </div>
+          </div> : null
+      }
       <div className="nav-center">
         <a className="nav-item" href="https://github.com/neosavvyinc" style={styles.text}>
           <span className="icon">

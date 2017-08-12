@@ -23,7 +23,7 @@ const index = function({ size }) {
       </button>
   );
   return (
-    <Main headerTransparent={true}>
+    <Main headerTransparent={true} hideLogoInHeader={true}>
       <div id="index-content-container">
         <style dangerouslySetInnerHTML={{__html: '.contact .ReactForm { width: 100%; max-width: 672px; } .contact .ReactForm input { width: 100%; } '}} />
         <div>
@@ -40,6 +40,14 @@ const index = function({ size }) {
               </ScrollLink>
             </div>
             <div style={styles.jumbo.content}>
+              <Link prefetch
+                    href="/">
+                <img
+                  src={`/static/images/assets/logo-white.png`}
+                  alt="NS"
+                  style={styles.jumbo.logo}
+                />
+              </Link>
               <h1 className="title is-1" style={{...styles.jumbo.text, ...styles.jumbo.title}}>NEOSAVVY</h1>
               <p style={{...styles.jumbo.text, ...styles.jumbo.subtitle}}>
                 Delivering software development, professional training, and project delivery solutions to suit your business needs
@@ -74,7 +82,7 @@ const index = function({ size }) {
       </div>
     </Main>
   );
-}
+};
 
 export default sizeMe()(index);
 
@@ -99,6 +107,13 @@ const styles = {
     },
     cta: {
       cursor: 'pointer'
+    },
+    logo: {
+      cursor: 'pointer',
+      float: 'left',
+      width: '46px',
+      marginTop: '11px',
+      marginRight: '6px'
     },
     iconContainer: {
       textAlign: 'center',
@@ -133,4 +148,4 @@ const styles = {
       zIndex: 99
     }
   },
-}
+};
