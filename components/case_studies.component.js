@@ -27,6 +27,11 @@ const companies = [
     logo: '/static/images/case-studies/bionic-labs.png',
     url: 'google.com'
   },
+  {
+    name: 'Dash',
+    logo: '/static/images/case-studies/dash.png',
+    url: 'google.com'
+  },
 ];
 
 const CaseStudies = ({ size }) => {
