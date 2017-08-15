@@ -5,7 +5,6 @@ import Main from '../layouts/main.layout';
 export default class Engineer extends Component {
   sendMail = () => {
     var link = "mailto:dana@neosavvy.com"
-      + "?cc=contact@neosavvy.com"
       + "&subject=" + escape("Software Engineer Position");
 
     window.location.href = link;
