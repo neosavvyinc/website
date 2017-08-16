@@ -52,8 +52,8 @@ const CaseStudies = ({ size }) => {
   return (
     <div style={styles.container}>
       {
-        _.chain(companies).chunk(chunksize).map(companySegment => (
-          <div style={styles.cardSegment}>{_.map(companySegment, company => (
+        _.chain(companies).chunk(chunksize).map((companySegment, index) => (
+          <div key={index} style={styles.cardSegment}>{_.map(companySegment, company => (
             <div
               key={company.name}
               className="card"
