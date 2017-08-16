@@ -61,15 +61,11 @@ const CaseStudies = ({ size }) => {
             >
               <div className="card-content"
                    style={styles.cardContent}>
-                <p/>
                 <p className="title" style={{ textAlign: 'center' }}>
                   <img
                     src={company.logo}
                     alt={company.name}
                   />
-                </p>
-                <p className="subtitle">
-                  {company.name}
                 </p>
               </div>
             </div>
