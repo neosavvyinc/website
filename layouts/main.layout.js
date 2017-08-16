@@ -3,6 +3,9 @@ import Head from 'next/head';
 import * as analytics from '../utils/analytics.util';
 import Header from '../components/header.component';
 import Footer from '../components/footer.component';
+import Scroll from 'react-scroll';
+
+const scroll = Scroll.animateScroll;
 
 export default class Main extends Component {
   componentDidMount () {
@@ -13,7 +16,7 @@ export default class Main extends Component {
     analytics.logPageView();
 
     // NOTE - Not in love with this fix, but ensures that mobile loads correctly
-    scroll(0,0);
+    scroll.scrollToTop();
   }
 
   render() {
